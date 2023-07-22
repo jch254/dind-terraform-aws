@@ -1,7 +1,7 @@
 FROM docker:dind
 
 RUN apk add --no-cache \
-  python2 \
+  python3 \
   py-pip \
   py-setuptools \
   openssl \
