@@ -23,7 +23,7 @@ RUN apk add --no-cache --update \
 
 # Install Terraform
 ENV TERRAFORM_VERSION=1.13.1
-ENV TERRAFORM_SHA256SUM=3bb1b9b61feda0b9ecca2ba8ec92b2a088f8b41d0b64a4f46c5c3b5a51b2b0b0
+ENV TERRAFORM_SHA256SUM=4449e2ddc0dee283f0909dd603eaf98edeebaa950f4635cea94f2caf0ffacc5a
 
 RUN wget -O terraform.zip "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
   echo "${TERRAFORM_SHA256SUM}  terraform.zip" | sha256sum -c - && \
