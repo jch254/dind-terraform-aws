@@ -1,0 +1,21 @@
+# syntax=docker/dockerfile:1
+FROM docker:dind
+
+# Install minimal dependencies only
+RUN apk add --no-cache \
+  bash \
+  curl \
+  wget \
+  unzip \
+  aws-cli && \
+  rm -rf /var/cache/apk/*
+
+# Install Terraform (minimal)
+ENV TERRAFORM_VERSION=1.13.3
+RUN wget -O terraform.zip "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
+  unzip terraform.zip -d /usr/local/bin && \
+  rm -f terraform.zip && \
+  chmod +x /usr/local/bin/terraform
+
+WORKDIR /workspace
+ENTRYPOINT ["/bin/bash", "-c"]
