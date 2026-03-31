@@ -11,7 +11,7 @@ Docker-in-Docker (+ Terraform + AWS CLI) build/deployment environment for use wi
 | Tool | Version (at build time) | Notes |
 | ---- | ----------------------- | ----- |
 | Docker (daemon + CLI) | From `docker:dind` base | Privileged mode required in CodeBuild |
-| Terraform | 1.13.1 | SHA256 verified during image build |
+| Terraform | 1.14.8 | SHA256 verified during image build |
 | AWS CLI v2 | Alpine package | Region & credential config done at runtime |
 | Python 3 + pip | Alpine packages | Enables helper scripting / terraform tooling |
 | jq, curl, git, bash, unzip, wget, less, groff, openssl | Latest Alpine | Common build / scripting utilities |

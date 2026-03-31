@@ -11,7 +11,7 @@ RUN apk add --no-cache \
   rm -rf /var/cache/apk/*
 
 # Install Terraform (minimal)
-ENV TERRAFORM_VERSION=1.13.3
+ENV TERRAFORM_VERSION=1.14.8
 RUN wget -O terraform.zip "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
   unzip terraform.zip -d /usr/local/bin && \
   rm -f terraform.zip && \
